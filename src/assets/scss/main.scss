@@ -1,3 +1,24 @@
-body {
-    font-size: 1rem;
-}
+// Settings and variables
+@import "design-tokens/design-tokens.colors.scss";
+@import "design-tokens/design-tokens.media-queries.scss";
+@import "design-tokens/design-tokens.fonts.scss";
+
+// normalize
+@import "vendors/normalize.scss";
+
+// Mixins
+@import "mixins/mixins.media-queries.scss";
+
+// Base (unclassed elements)
+@import "base/base.body.scss";
+
+// Layout
+@import "layouts/layouts.contact.scss";
+
+// Components
+@import "components/components.header.scss";
+@import "components/components.footer.scss";
+@import "components/components.navigation.scss";
+
+// Utilities
+@import "utilities/utilities.spacing.scss";

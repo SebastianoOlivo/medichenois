@@ -1,4 +1,19 @@
 {
+  "name": "Medichenois",
+  "description": "Website of Medichenois",
+  "version": "1.0.0",
+  "author": "Olivo Sebastiano",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastianoolivo/medichenois"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
+  "type": "module",
   "scripts": {
     "server": "npx @11ty/eleventy --serve --quiet",
     "clean": "rimraf './dist'",
@@ -11,7 +26,7 @@
     "images": "node \"./build_tasks/generate-images.js\"",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
-    "build": "npm-run-all clean cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production --parallel images styles:prod scripts:prod",
+    "build": "npm-run-all clean --parallel images styles:prod scripts:prod eleventy",
     "dev": "npm-run-all --parallel server watch:*"
     
   },
@@ -30,6 +45,7 @@
     "js-yaml": "^4.1.0",
     "rimraf": "^6.0.1",
     "sass": "^1.79.4",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "glob": "^10.3.12"
   }
 }

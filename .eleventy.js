@@ -1,69 +1,61 @@
-const yaml = require("js-yaml");
-const { DateTime } = require("luxon");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+import { DateTime } from "luxon";
+import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 
-module.exports = function (eleventyConfig) {
+//Collections
+import { news } from "./src/_11ty/collections/news.js";
+import { practitioners } from "./src/_11ty/collections/practitioners.js";
 
-  // human readable date
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
+//Filters
+import { limit } from "./src/_11ty/filters/limit.js";
+import { json } from "./src/_11ty/filters/json.js";
+import {
+  dateFeed,
+  dateFormat,
+  dateFull,
+  dateISO,
+  dateYear,
+} from "./src/_11ty/filters/dates.js";
+
+export default function (eleventyConfig) {
+
+  // collections
+  eleventyConfig.addCollection("news", news);
+  eleventyConfig.addCollection("practitioners", practitioners);
+
+  // filters
+  eleventyConfig.addFilter("limit", limit);
+  eleventyConfig.addFilter("dateISO", dateISO);
+  eleventyConfig.addFilter("dateFeed", dateFeed);
+  eleventyConfig.addFilter("dateFull", dateFull);
+  eleventyConfig.addFilter("dateFormat", dateFormat);
+  eleventyConfig.addFilter("dateYear", dateYear);
+  eleventyConfig.addFilter("json", json);
+
+  // plugins
+  eleventyConfig.addPlugin(syntaxHighlightPlugin, {
+    trim: true,
   });
 
-  // Copy assets Files to /dist
+   // passthrough copy
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
-    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/js/alpine.js"
   });
 
   // Copy Image Folder to /dist
   eleventyConfig.addPassthroughCopy("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+  eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
 
-  // Copy favicon to route of /dist
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
-
-  //News Collection
-  eleventyConfig.addCollection("news", function (collection){
-    return collection.getFilteredByGlob(".src/news/*.md");
-  });
-
-  //Practitioner Collection
-  eleventyConfig.addCollection("practitioners", function (collection){
-    return collection.getFilteredByGlob(".src/practitioners/*.md").sort((a, b) => {
-      return a.data.surname.localeCompare(b.data.surname);
-    });
-  });
-
-  //Filters 
-
-   /**
-   * Format date: ISO
-   * @param {Date} date
-   */
-   eleventyConfig.addFilter("dateIso", function (date) {
-    const jsDate = new Date(date);
-    const dt = DateTime.fromJSDate(jsDate);
-    return dt.toISO();
-  });
-
-  /**
-   * Format date: Human readable format
-   * @param {Date} date
-   */
-  eleventyConfig.addFilter("dateFull", function (date) {
-    const jsDate = new Date(date);
-    const dt = DateTime.fromJSDate(jsDate);
-    return dt.setLocale(locale).toLocaleString(DateTime.DATE_FULL);
-  });
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
   return {
     dir: {
       input: "src",
-      output: "dist"
+      output: "dist",
+      includes: "_includes",
+      data: "_data",
     },
     htmlTemplateEngine: "njk",
   };
