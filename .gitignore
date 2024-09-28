@@ -1,4 +1,4 @@
-_site/
+_dist/
 _tmp/
 .DS_Store
 node_modules/

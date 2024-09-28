@@ -1,14 +1,8 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-  // Disable automatic use of your .gitignore
-  eleventyConfig.setUseGitIgnore(false);
-
-  // Merge data instead of overriding
-  eleventyConfig.setDataDeepMerge(true);
 
   // human readable date
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -17,40 +11,51 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // Syntax Highlighting for Code blocks
-  eleventyConfig.addPlugin(syntaxHighlight);
-
-  // To Support .yaml Extension in _data
-  // You may remove this if you can use JSON
-  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
-
-  // Copy Static Files to /_Site
+  // Copy assets Files to /dist
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
-    "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
-    "./node_modules/prismjs/themes/prism-tomorrow.css":
-      "./static/css/prism-tomorrow.css",
+    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/js/alpine.js"
   });
 
-  // Copy Image Folder to /_site
-  eleventyConfig.addPassthroughCopy("./src/static/img");
+  // Copy Image Folder to /dist
+  eleventyConfig.addPassthroughCopy("./src/assets/img");
 
-  // Copy favicon to route of /_site
+  // Copy favicon to route of /dist
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
-  // Minify HTML
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if (outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
-    }
 
-    return content;
+  //News Collection
+  eleventyConfig.addCollection("news", function (collection){
+    return collection.getFilteredByGlob(".src/news/*.md");
+  });
+
+  //Practitioner Collection
+  eleventyConfig.addCollection("practitioners", function (collection){
+    return collection.getFilteredByGlob(".src/practitioners/*.md").sort((a, b) => {
+      return a.data.surname.localeCompare(b.data.surname);
+    });
+  });
+
+  //Filters 
+
+   /**
+   * Format date: ISO
+   * @param {Date} date
+   */
+   eleventyConfig.addFilter("dateIso", function (date) {
+    const jsDate = new Date(date);
+    const dt = DateTime.fromJSDate(jsDate);
+    return dt.toISO();
+  });
+
+  /**
+   * Format date: Human readable format
+   * @param {Date} date
+   */
+  eleventyConfig.addFilter("dateFull", function (date) {
+    const jsDate = new Date(date);
+    const dt = DateTime.fromJSDate(jsDate);
+    return dt.setLocale(locale).toLocaleString(DateTime.DATE_FULL);
   });
 
   // Let Eleventy transform HTML files as nunjucks
@@ -58,6 +63,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
+      output: "dist"
     },
     htmlTemplateEngine: "njk",
   };
