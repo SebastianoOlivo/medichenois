@@ -20,23 +20,20 @@
 
   <!-- Apple icon (minimal) -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.bundle.js"></script>
 </head>
 <body>
-    {% include "./partials/header.html" %}
-
-    {% block content %}{% endblock %}
-
-    {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
+    {% include "../partials/header.html" %}
+    <div class="page-container page-container--narrow">
+      {% block content %}{% endblock %}
+    </div>
+   {#  {% include "../partials/footer.html" %} #}
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
       <!-- Needed only if you are using Netlify Identity feature -->
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      <!-- Scripts -->
-      <script type="module" src="/assets/js/main.bundle.js"></script>
     {% endif %}
 
   </body>

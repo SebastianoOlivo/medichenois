@@ -1,9 +1,0 @@
-items:
-  - text: Home
-    url: "#"
-  - text: Practitioners
-    url: /practitioners
-  - text: News
-    url: /news
-  - text: Contact
-    url: "#Contact"

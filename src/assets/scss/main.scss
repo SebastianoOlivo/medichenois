@@ -11,11 +11,16 @@
 
 // Base (unclassed elements)
 @import "base/base.body.scss";
+@import "base/base.html.scss";
+@import "base/base.font.scss";
+@import "base/base.margin.scss";
 
 // Layout
 @import "layouts/layouts.contact.scss";
+@import "layouts/_layouts.containers.scss";
 
 // Components
+@import "components/components.titles.scss";
 @import "components/components.header.scss";
 @import "components/components.footer.scss";
 @import "components/components.navigation.scss";

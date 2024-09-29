@@ -59,6 +59,15 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: URL, name: url, widget: string }
               - { label: Description, name: desc, widget: string }
+      - label: "Site info"
+        name: "site"
+        file: "src/_data/site.js"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: URL, name: url, widget: string }
+          - { label: Base url, name: baseUrl, widget: string }
+          - { label: Build time, name: buildTime, widget: date }
       - label: "Meta Settings"
         name: "settings"
         file: "src/_data/settings.yaml"

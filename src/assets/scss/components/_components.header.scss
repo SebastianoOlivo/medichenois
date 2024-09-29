@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.site-name{
+  font-size:34px;
+}
+
+.logo {
+  max-width: 120px;
+  overflow: hidden;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}

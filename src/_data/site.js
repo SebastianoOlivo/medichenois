@@ -4,4 +4,5 @@ export default {
   url: "https://www.medichenois.com",
   baseUrl: "/",
   buildTime: new Date(),
+  maintenanceMode: true,
 };

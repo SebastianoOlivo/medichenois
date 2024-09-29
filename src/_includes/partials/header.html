@@ -1,9 +1,9 @@
+{% if not site.maintenanceMode %}
 <div class="header">
-  <h1 class="site-name">Medichenois</h1>
-  <!--Logo etc-->
+  <h1 class="h1 site-name">{{ site.title}}</h1>
   <div class="logo">
     <a href="/">
-      <svg width="501" height="424" viewBox="0 0 501 424" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" height="100%" viewBox="0 0 501 424" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M243.504 292.945C253.827 292.226 258.403 254.379 236.68 237.965C211.365 218.827 188.775 223.395 202.885 243.939C184.964 238.762 148.226 225.792 134.701 230.211C128.017 232.398 126.096 233.881 133.14 248.132C93.9648 243.017 51.0339 236.271 89.225 266.849C123.84 279.412 50.1125 276.633 34.1677 298.684C23.6107 313.286 40.5784 337.484 19.7689 357.356C9.42269 367.242 42.8038 349.79 65.5576 344.121C57.3041 382.086 105.904 344.434 144.813 345.503C145.18 379.876 157.697 386.037 186.385 344.02C207.14 313.621 200.698 305.813 208.491 308.304C216.276 310.795 220.196 333.572 227.364 323.507C234.524 313.442 233.181 293.671 243.504 292.945Z"
           fill="#C4EBC2" />
@@ -22,14 +22,15 @@
 
   <!--Menu-->
   <nav class="navigation">
-    {% if navigation.items %}
+    {% if navigation %}
     <ul class="">
-      {% for item in navigation.items %}
+      {% for item in navigation %}
       <li class="navigation__item">
-        <a class="" href="{{ item.url }}">{{ item.text }}</a>
+        <a class="" href="{{ item.url }}">{{ item.label }}</a>
       </li>
       {% endfor %}
     </ul>
     {% endif %}
   </nav>
 </div>
+{% endif %}
