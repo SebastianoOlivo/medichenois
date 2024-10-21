@@ -6,6 +6,9 @@
 // normalize
 @import "vendors/normalize.scss";
 
+// Functions
+@import "functions/functions.base.scss";
+
 // Mixins
 @import "mixins/mixins.media-queries.scss";
 
@@ -18,12 +21,15 @@
 // Layout
 @import "layouts/layouts.contact.scss";
 @import "layouts/_layouts.containers.scss";
+@import "layouts/_layouts.home.scss";
 
 // Components
 @import "components/components.titles.scss";
 @import "components/components.header.scss";
 @import "components/components.footer.scss";
 @import "components/components.navigation.scss";
+@import "components/components.map.scss";
+@import "components/components.button.scss";
 
 // Utilities
 @import "utilities/utilities.spacing.scss";

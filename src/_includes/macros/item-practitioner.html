@@ -1,0 +1,10 @@
+{% macro itemPractitioner(fullName, jobTitle, pictureUrl) %}
+  <article class="practitioner__thumbnail">
+    <div class="image-container">
+      <img src="{{pictureUrl}}" alt="portrait of {{fullName}}" srcset="">
+    </div>
+    <h3 class="practitioner__thumbnail__title">{{ fullName }}</h3>
+    <p class="practitioner__thumbnail__job-title">{{ jobTitle }}</p>
+    <a class="practitioner__thumbnail__link" href="">Make an appointment</a>
+  </article>
+{% endmacro %}

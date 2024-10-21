@@ -1,0 +1,87 @@
+.page-intro {
+  display: flex;
+  align-items: center;
+  &__column {
+    width: 50%;
+  }
+}
+
+.practitioners {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  .practitioner {
+    width: 25%;
+    box-sizing: border-box;
+    padding: rem(4);
+    .image-container{
+      border-radius: rem(8) rem(8) 0 0;
+    }
+    &__thumbnail {
+      margin-bottom: rem(16);
+      &__title, &__job-title{
+        font-size: rem(24);
+        margin-bottom: rem(4);
+        line-height: 1em;
+      }
+      &__title {
+        font-family: var(--fontstack-alt);
+      }
+      &__link {
+        color: var(--color-secondary-dark);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.news-background{
+  background-color: var(--color-secondary-lighter);
+  padding: rem(72) 0;
+}
+
+.news-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  &__item {
+    width: 25%;
+    box-sizing: border-box;
+    padding: rem(4);
+  }
+}
+
+.news__thumbnail {
+  background-color: var(--color-white);
+  padding: rem(24);
+  border-radius: rem(8);
+
+  &__link {
+    color: var(--color-black);
+    text-decoration: none;
+  }
+
+  &__title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title{
+    font-size: rem(24);
+    font-family: var(--fontstack-alt);
+  }
+  &__button {
+    background-color: var(--color-secondary-dark);
+    width: rem(50);
+    height: rem(50);
+    min-width: rem(50);
+    border-radius: 100%;
+    padding: 0;
+    border: none;
+    color: var(--color-white);
+  }
+}

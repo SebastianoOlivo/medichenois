@@ -7,7 +7,7 @@ export default [
   {
     label: "Practitioners",
     trigger: "practitioners",
-    url: "/ractitioners"
+    url: "/practitioners"
   },
   {
     label: "News",

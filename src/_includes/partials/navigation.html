@@ -1,0 +1,18 @@
+<nav aria-label="navigation">
+  {% for item in navigation %}
+
+    {% set activeClass = "" %}
+    {% set activeAria = "" %}
+    {% if item.navTrigger == activeSection %}
+      {% set activeClass = "is-active" %}
+      {% set activeAria = 'aria-current="page"' | safe %}
+    {% endif %}
+
+    {% if loop.first %}<ul class="navigation__items">{% endif %}
+      <li class="navigation__item">
+        <a class="navigation__item__link {{ activeClass }}" href="{{ item.url }}" {{ activeAria }}>{{ item.label }}</a>
+      </li>
+    {% if loop.last %}</ul>{% endif %}
+
+  {% endfor %}
+</nav>

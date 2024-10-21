@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import {inspect} from "util";
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 
 //Collections
@@ -16,6 +17,7 @@ import {
   dateYear,
 } from "./src/_11ty/filters/dates.js";
 
+
 export default function (eleventyConfig) {
 
   // collections
@@ -30,6 +32,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("dateFormat", dateFormat);
   eleventyConfig.addFilter("dateYear", dateYear);
   eleventyConfig.addFilter("json", json);
+  eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 
   // plugins
   eleventyConfig.addPlugin(syntaxHighlightPlugin, {
@@ -42,6 +45,7 @@ export default function (eleventyConfig) {
   });
 
   // Copy Image Folder to /dist
+  eleventyConfig.addPassthroughCopy({"./admin/uploads": "uploads"});
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
   eleventyConfig.addPassthroughCopy({ "./src/static": "/" });

@@ -9,35 +9,46 @@ const config = {
 
 const transforms = [
   {
-    // 1024x576 thumbnails for news
-    src: "./src/assets/img/news/",
-    dist: "./dist/assets/img/news/1024x576/",
+    // 930x1185 thumbnails for practitioners
+    src: "./src/admin/uploads/img/practitioners/",
+    dist: "./dist/uploads/img/practitioners/930x1185/",
+    formats: ["jpg"],
+    options: {
+      width: 930,
+      height: 1185,
+      fit: "cover",
+    },
+  },
+  {
+    // 310x395 thumbnails for practitioners
+    src: "./src/admin/uploads/img/practitioners/",
+    dist: "./dist/uploads/img/practitioners/310x395/",
+    formats: ["jpg"],
+    options: {
+      width: 310,
+      height: 395,
+      fit: "cover",
+    },
+  },
+  {
+    // 1024x786 thumbnails for news
+    src: "./src/admin/uploads/img/news/",
+    dist: "./dist/uploads/img/news/1024x786/",
     formats: ["jpg"],
     options: {
       width: 1024,
-      height: 576,
+      height: 786,
       fit: "cover",
     },
   },
   {
-    // 600x600 thumbnails for news
-    src: "./src/assets/img/news/",
-    dist: "./dist/assets/img/news/600x600/",
+    // 680x720 for images
+    src: "./src/assets/img/",
+    dist: "./dist/assets/img/680x720/",
     formats: ["jpg"],
     options: {
-      width: 600,
-      height: 600,
-      fit: "cover",
-    },
-  },
-  {
-    // 800x600 thumbnails for practitioners
-    src: "./src/assets/img/practitioners/",
-    dist: "./dist/assets/img/practitioners/800x600/",
-    formats: ["jpg"],
-    options: {
-      width: 800,
-      height: 600,
+      width: 680,
+      height: 720,
       fit: "cover",
     },
   },

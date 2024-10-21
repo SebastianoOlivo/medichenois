@@ -337,6 +337,7 @@ body {
   background-color: var(--color-white);
   color: var(--color-gray8);
   font-size: 1rem;
+  width: 100%;
 }
 @media all and (min-width: 750px) {
   body {
@@ -344,11 +345,11 @@ body {
   }
 }
 
-body.has-menu {
+body.navigation--active {
   overflow-y: hidden;
 }
 @media all and (min-width: 750px) {
-  body.has-menu {
+  body.navigation--active {
     overflow-y: auto;
   }
 }
@@ -395,9 +396,10 @@ address {
 */
 .page-container {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1280px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  margin-top: 120px;
 }
 @media all and (min-width: 750px) {
   .page-container {
@@ -406,13 +408,102 @@ address {
   }
 }
 
-.page-container--narrow {
+.page-container--narrow, .text-container {
   max-width: 672px;
 }
 
 .image-container {
   max-width: 100%;
   overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.page-intro {
+  display: flex;
+  align-items: center;
+}
+.page-intro__column {
+  width: 50%;
+}
+
+.practitioners {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.practitioners .practitioner {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+.practitioners .practitioner .image-container {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.practitioners .practitioner__thumbnail {
+  margin-bottom: 1rem;
+}
+.practitioners .practitioner__thumbnail__title, .practitioners .practitioner__thumbnail__job-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  line-height: 1em;
+}
+.practitioners .practitioner__thumbnail__title {
+  font-family: var(--fontstack-alt);
+}
+.practitioners .practitioner__thumbnail__link {
+  color: var(--color-secondary-dark);
+  text-decoration: none;
+}
+
+.news-background {
+  background-color: var(--color-secondary-lighter);
+  padding: 4.5rem 0;
+}
+
+.news-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.news-list__item {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+
+.news__thumbnail {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.news__thumbnail__link {
+  color: var(--color-black);
+  text-decoration: none;
+}
+.news__thumbnail__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+.news__thumbnail__title {
+  font-size: 1.5rem;
+  font-family: var(--fontstack-alt);
+}
+.news__thumbnail__button {
+  background-color: var(--color-secondary-dark);
+  width: 3.125rem;
+  height: 3.125rem;
+  min-width: 3.125rem;
+  border-radius: 100%;
+  padding: 0;
+  border: none;
+  color: var(--color-white);
 }
 
 .h1,
@@ -426,26 +517,224 @@ address {
   color: var(--color-primary-darker);
 }
 
-.header {
+.slogan {
+  font-size: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+@media all and (min-width: 750px) {
+  .slogan {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  .slogan {
+    font-size: 5rem;
+  }
+}
+
+.h2 {
+  font-size: 2rem;
+}
+@media all and (min-width: 750px) {
+  .h2 {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  .h2 {
+    font-size: 4rem;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  color: var(--color-white);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-gray3);
+  box-sizing: border-box;
+}
+.header .u-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+@media all and (min-width: 750px) {
+  .header .u-wrapper {
+    position: relative;
+  }
+}
+.header .mobile-navigation-button {
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 11;
+}
+@media all and (min-width: 750px) {
+  .header .mobile-navigation-button {
+    display: none;
+  }
+}
+.header .mobile-navigation-button:before, .header .mobile-navigation-button:after, .header .mobile-navigation-button__middle-line {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-darker);
+  transition: transform 380ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+.header .mobile-navigation-button:before {
+  top: 0.0625rem;
+  margin-top: -1px;
+  transition: transform 380ms cubic-bezier(0.77, 0, 0.175, 1) 380ms, top 380ms cubic-bezier(0.77, 0, 0.175, 1) 600ms;
+}
+.header .mobile-navigation-button__middle-line {
+  bottom: 50%;
+  margin-bottom: -1px;
+}
+.header .mobile-navigation-button:after {
+  bottom: 0.0625rem;
+  margin-bottom: -1px;
+  transition: transform 380ms cubic-bezier(0.77, 0, 0.175, 1) 380ms, bottom 380ms cubic-bezier(0.77, 0, 0.175, 1) 600ms;
 }
 
 .site-name {
-  font-size: 34px;
+  font-size: 2.125rem;
+  margin-bottom: 0;
 }
 
 .logo {
   max-width: 120px;
+  height: 100%;
   overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media all and (min-width: 750px) {
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+  }
 }
 .logo svg {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.mobile-navigation {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 2.625rem 1.5rem;
+  color: var(--color-white);
+  background-color: var(--color-primary-light);
+  opacity: 0;
+  transition: all 180ms cubic-bezier(0.077, 0, 0.175, 1);
+}
+@media all and (min-width: 750px) {
+  .mobile-navigation {
+    background-color: var(--color-white);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    opacity: 1;
+    height: auto;
+  }
+}
+.mobile-navigation--active {
+  opacity: 1;
+  left: 0;
+}
+
+.navigation__items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 25vh;
+}
+@media all and (min-width: 750px) {
+  .navigation__items {
+    flex-direction: row;
+    margin-top: 0;
+  }
+}
+@media all and (min-width: 750px) {
+  .navigation__item + .navigation__item {
+    margin-left: 1rem;
+  }
+}
+.navigation__item__link {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  font-size: 1.5rem;
+  font-family: var(--fontstack-alt);
+}
+@media all and (min-width: 750px) {
+  .navigation__item__link {
+    font-size: 1rem;
+    color: var(--color-black);
+  }
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.9%;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-darker);
+  border-radius: 3rem;
+  border: none;
+  padding: 0.5rem 1rem;
 }
 
 .u-spacing-medium-vertical {
   padding: 32px 0;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/design-tokens/_design-tokens.colors.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/design-tokens/_design-tokens.fonts.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/vendors/_normalize.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.body.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/mixins/_mixins.media-queries.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.html.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.font.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.margin.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/layouts/_layouts.containers.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.titles.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.header.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/utilities/_utilities.spacing.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACE;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EAEA;EACA;;;ACjBF;EACE;EACA;;;ACNF;AAEA;AAAA;AAGA;AAAA;AAAA;AAAA;AAKC;EACG;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;EACA;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;EAGE;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;ACzVJ;EACI;EACA;EACA;EACA;EACA;;ACaA;EDlBJ;IAQM;;;;AAIJ;EACE;;ACKA;EDNF;IAII;;;;AEhBN;EACE;;;ACLF;EACE;EACA;EACA;EACA;;AAGF;EACE;EACA;EACA;EACA;;ACPF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAaE;EACA;;;ACnBF;AAAA;AAAA;AAIA;EACE;EACA;EACA;EACA;;AJUE;EIdJ;IAOI;IACA;;;;AAIJ;EACE;;;AAGF;EACE;EACA;;;AC1BF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA;EACA;;;ACRF;EACE;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;AAEA;EACE;EACA;;;ACfJ;EACE%22,%22file%22:%22main.css%22%7D */
+.u-wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/design-tokens/_design-tokens.colors.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/design-tokens/_design-tokens.fonts.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/vendors/_normalize.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.body.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/mixins/_mixins.media-queries.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.html.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.font.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/base/_base.margin.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/layouts/_layouts.containers.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/layouts/_layouts.home.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.titles.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.header.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.navigation.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.map.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/components/_components.button.scss%22,%22file:///Users/sebastiano/Dev/medichenois/src/assets/scss/utilities/_utilities.spacing.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACE;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EAEA;EACA;;;ACjBF;EACE;EACA;;;ACNF;AAEA;AAAA;AAGA;AAAA;AAAA;AAAA;AAKC;EACG;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;EACA;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;EAGE;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;ACzVJ;EACI;EACA;EACA;EACA;EACA;EACA;;ACYA;EDlBJ;IASM;;;;AAIJ;EACE;;ACIA;EDLF;IAGI;;;;AEhBN;EACE;;;ACLF;EACE;EACA;EACA;EACA;;AAGF;EACE;EACA;EACA;EACA;;ACPF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAaE;EACA;;;ACnBF;AAAA;AAAA;AAIA;EACE;EACA;EACA;EACA;EACA;;AJSE;EIdJ;IAQI;IACA;;;;AAIJ;EACE;;;AAGF;EACE;EACA;;AACA;EACE;EACA;;;AC9BJ;EACE;EACA;;AACA;EACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;;AACA;EACE;;AAEF;EACE;;AACA;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;;;AAMR;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;;;AAIJ;EACE;EACA;EACA;;AAEA;EACE;EACA;;AAGF;EACE;EACA;;AAGF;EACE;EACA;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACpFJ;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;ANQE;EMXJ;IAKI;;;ANMA;EMXJ;IASI;;;;AAIJ;EACE;;ANHE;EMEJ;IAII;;;ANNA;EMEJ;IAQI;;;;AChCJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;;APIA;EORF;IAMI;;;AAGJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;APXA;EOCF;IAYI;;;AAEF;EAGE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEF;EACE;EACA;EACA;;AAEF;EACE;EACA;;AAEF;EACE;EACA;EACA;;;AAMN;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;APvDE;EOkDJ;IAOI;IACA;IACA;IACA;IACA;;;AAEF;EACE;EACA;;;ACvFJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;ARWE;EQtBJ;IAaI;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;;AAEF;EACE;EACA;;;AAKF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;ARdA;EQOF;IASI;IACA;;;ARjBF;EQqBA;IAEI;;;AAGJ;EACE;EACA;EACA;EACA;;AR9BF;EQ0BA;IAMI;IACA;;;;ACtDR;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;ACXF;EACE;EACA;EACA;EACA;EACA;;;ACLF;EACE;;;AAGF;EACE;EACA;EACA;EACA%22,%22file%22:%22main.css%22%7D */

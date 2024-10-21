@@ -1,3 +1,10 @@
 .u-spacing-medium-vertical {
   padding: 32px 0;
 }
+
+.u-wrapper{
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: calc(24 / 16 * 1rem);
+  padding-right: calc(24 / 16 * 1rem);
+}

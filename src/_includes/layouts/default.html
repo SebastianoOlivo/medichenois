@@ -23,16 +23,17 @@
   <!-- Scripts -->
   <script type="module" src="/assets/js/main.bundle.js"></script>
 </head>
-<body>
+<body class="">
     {% include "../partials/header.html" %}
-    <div class="page-container page-container--narrow">
+    <div class="page-container">
       {% block content %}{% endblock %}
     </div>
-   {#  {% include "../partials/footer.html" %} #}
+   {% include "../partials/footer.html" %}
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
       <!-- Needed only if you are using Netlify Identity feature -->
+      
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
 

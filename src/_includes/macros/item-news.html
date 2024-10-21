@@ -1,0 +1,12 @@
+{% macro itemNews(title, date, excerpt) %}
+  <article class="news__thumbnail">
+    <a class="news__thumbnail__link" href="">
+      <div class="news__thumbnail__title-container">
+        <h3 class="news__thumbnail__title">{{ title }}</h3>
+        <button class="news__thumbnail__button">+</button>
+      </div>
+      <p class="news__thumbnail__excerpt">{{ excerpt | limit(75) }}</p>
+      <time class="news__thumbnail__date" datetime="{{ date | dateISO }}">{{date | dateFull}}</time>
+    </a>
+  </article>
+{% endmacro %}

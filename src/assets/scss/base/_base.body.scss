@@ -8,15 +8,15 @@ body {
     background-color: var(--color-white);
     color: var(--color-gray8);
     font-size: 1rem;
+    width: 100%;
   
     @include mq(medium) {
       font-size: calc(18 / 16 * 1rem);
     }
   }
   
-  body.has-menu {
+  body.navigation--active {
     overflow-y: hidden;
-  
     @include mq(medium) {
       overflow-y: auto;
     }
