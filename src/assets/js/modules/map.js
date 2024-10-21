@@ -7,7 +7,7 @@ const position = {
 };
 
 const loader = new Loader({
-  apiKey: "AIzaSyCk2_hC7CPHWPXlMopr6pA6fuDXY3P1tYQ",
+  apiKey: "",
   libraries: ["maps", 'marker']
 });
 
