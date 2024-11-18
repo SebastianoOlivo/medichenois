@@ -4,7 +4,7 @@ import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 
 //Collections
 import { news } from "./src/_11ty/collections/news.js";
-import { practitioners } from "./src/_11ty/collections/practitioners.js";
+import { practitionersPerCategory, practitioners } from "./src/_11ty/collections/practitioners.js";
 
 //Filters
 import { limit } from "./src/_11ty/filters/limit.js";
@@ -23,6 +23,7 @@ export default function (eleventyConfig) {
   // collections
   eleventyConfig.addCollection("news", news);
   eleventyConfig.addCollection("practitioners", practitioners);
+  eleventyConfig.addCollection("practitionersPerCategory", practitionersPerCategory);
 
   // filters
   eleventyConfig.addFilter("limit", limit);

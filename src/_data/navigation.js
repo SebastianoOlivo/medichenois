@@ -5,9 +5,9 @@ export default [
     url: "/"
   },
   {
-    label: "Practitioners",
+    label: "Praticien",
     trigger: "practitioners",
-    url: "/practitioners"
+    url: "/practitioners/"
   },
   {
     label: "News",
@@ -17,7 +17,7 @@ export default [
   {
     label: "Contact",
     trigger: "ontact",
-    url: "/#Contact"
+    url: "/#contact"
   }
 ]
 

@@ -1,0 +1,37 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: var(--fontstack-alt);
+  color: var(--color-black);
+}
+
+.slogan {
+  font-size: calc(48 / 16 * 1rem);
+  display: flex;
+  flex-direction: column;
+  color: var(--color-primary-darker);
+  @include mq(medium) {
+    font-size: calc(56 / 16 * 1rem);
+  }
+
+  @include mq(large) {
+    font-size: calc(80 / 16 * 1rem);
+  }
+}
+
+.h2 {
+  font-size: calc(32 / 16 * 1rem);
+  
+  @include mq(medium) {
+    font-size: calc(48 / 16 * 1rem);
+  }
+
+  @include mq(large) {
+    font-size: calc(64 / 16 * 1rem);
+  }
+}
+

@@ -1,0 +1,42 @@
+.categories, .practitioners {
+  padding: 0;
+  list-style: none;
+}
+
+.category {
+  &__name {
+    font-family: var(--fontstack-alt);
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.practitioners {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.practitioner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem(8);
+  @include mq(medium) {
+    width: calc(50% - rem(8));
+    margin-right: rem(8);
+  }
+
+  @include mq(large) {
+    width: calc(33% - rem(8));
+  }
+
+  &:last-child {
+    margin:0;
+  }
+
+  &-card {
+    background-color: var(--color-white);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}

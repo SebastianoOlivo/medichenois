@@ -15,7 +15,7 @@
   ],
   "type": "module",
   "scripts": {
-    "server": "npx @11ty/eleventy --serve --quiet",
+    "server": "npx @11ty/eleventy --serve",
     "clean": "rimraf './dist'",
     "styles:prod": "sass --no-source-map --style=\"compressed\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",
     "styles:dev": "sass --embed-source-map --source-map-urls=\"absolute\" \"./src/assets/scss/main.scss\" \"./dist/assets/css/main.css\"",

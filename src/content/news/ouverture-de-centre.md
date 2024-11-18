@@ -1,9 +1,10 @@
 ---
 title: Ouverture du centre
-date: 2024-10-12T26:27:44.176Z
-pictureUrl: ./uploads/img/news/1024x786/default.jpg
+date: 2024-10-12T26:27:45.176Z
+thumbnailUrl: ./uploads/img/news/980x980/news_5.jpg
+pictureUrl: ./uploads/img/news/1280x422/news_5.jpg
 pictureAlt: Cover
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Dolor sit amet ed do eiusmod tempor
 tags:
   - doctor
 ---

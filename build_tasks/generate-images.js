@@ -9,35 +9,46 @@ const config = {
 
 const transforms = [
   {
-    // 930x1185 thumbnails for practitioners
+    // 930x1185 picture for practitioners
     src: "./src/admin/uploads/img/practitioners/",
-    dist: "./dist/uploads/img/practitioners/930x1185/",
+    dist: "./dist/uploads/img/practitioners/930x1200/",
     formats: ["jpg"],
     options: {
       width: 930,
-      height: 1185,
+      height: 1200,
       fit: "cover",
     },
   },
   {
     // 310x395 thumbnails for practitioners
     src: "./src/admin/uploads/img/practitioners/",
-    dist: "./dist/uploads/img/practitioners/310x395/",
+    dist: "./dist/uploads/img/practitioners/310x400/",
     formats: ["jpg"],
     options: {
       width: 310,
-      height: 395,
+      height: 400,
       fit: "cover",
     },
   },
   {
     // 1024x786 thumbnails for news
     src: "./src/admin/uploads/img/news/",
-    dist: "./dist/uploads/img/news/1024x786/",
+    dist: "./dist/uploads/img/news/980x980/",
     formats: ["jpg"],
     options: {
-      width: 1024,
-      height: 786,
+      width: 980,
+      height: 980,
+      fit: "cover",
+    },
+  },
+  {
+    // 1024x786 thumbnails for news
+    src: "./src/admin/uploads/img/news/",
+    dist: "./dist/uploads/img/news/1280x422/",
+    formats: ["jpg"],
+    options: {
+      width: 1280,
+      height: 422,
       fit: "cover",
     },
   },

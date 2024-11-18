@@ -1,0 +1,30 @@
+.panel-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  background-color: var(--color-black);
+  z-index: 5;
+  opacity: 0;
+}
+
+.panel {
+  width: calc(100% - rem(220));
+  margin-left: rem(220);
+  background-color: var(--color-white);
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(16);
+  }
+  &__close {
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+}

@@ -1,5 +1,6 @@
-import {color, Marker} from '@googlemaps/adv-markers-utils';
-import { Loader } from '@googlemaps/js-api-loader'; // No need to import Marker separately
+import {color, Marker} from "@googlemaps/adv-markers-utils";
+import { Loader } from "@googlemaps/js-api-loader"; // No need to import Marker separately
+
 
 const position = {
   lat: 50.71001434326172,
@@ -7,7 +8,7 @@ const position = {
 };
 
 const loader = new Loader({
-  apiKey: "",
+  apiKey: "AIzaSyAMPfet4ES4bjyVGcjKI0VSR4K8nKONCzA",
   libraries: ["maps", 'marker']
 });
 
@@ -27,7 +28,7 @@ const init = async () => {
   const map = new mapsLibrary.Map(document.getElementById("map"), mapOptions);
   const marke = new Marker({ 
     position: position,
-    color: "#C4EBC2",
+    color: "#E98D62",
     map: map,
     title: "Medichenois"
   });

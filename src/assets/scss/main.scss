@@ -22,6 +22,8 @@
 @import "layouts/layouts.contact.scss";
 @import "layouts/_layouts.containers.scss";
 @import "layouts/_layouts.home.scss";
+@import "layouts/_layouts.practitioner.scss";
+@import "layouts/_layouts.new.scss";
 
 // Components
 @import "components/components.titles.scss";
@@ -30,6 +32,8 @@
 @import "components/components.navigation.scss";
 @import "components/components.map.scss";
 @import "components/components.button.scss";
+@import "components/components.icon.scss";
+@import "components/components.panel.scss";
 
 // Utilities
 @import "utilities/utilities.spacing.scss";
