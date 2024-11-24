@@ -17,11 +17,25 @@ function practitioners(collection) {
 };
 
 function practitionersPerCategory(collection) {
-  return collection.getFilteredByGlob("./src/content/team/*.md")
-                   .reduce((practitionersPerCategory, practitioner) => {
-                     practitionersPerCategory[practitioner.data.category] = [...practitionersPerCategory[practitioner.data.category] || [], practitioner];
-                     return practitionersPerCategory;
-                   }, {});
-};
+  const practitioners = collection.getFilteredByGlob("./src/content/team/*.md");
+
+  // Group practitioners by category
+  const groupedPractitioners = practitioners.reduce((grouped, practitioner) => {
+    const category = practitioner.data.category;
+    if (!grouped[category]) {
+      grouped[category] = [];
+    }
+    grouped[category].push(practitioner);
+    return grouped;
+  }, {});
+
+  // Sort each category by lastName
+  Object.keys(groupedPractitioners).forEach(category => {
+    groupedPractitioners[category].sort((a, b) =>
+      a.data?.lastName.localeCompare(b.data?.lastName)
+    );
+  });
+  return groupedPractitioners;
+}
 
 export { practitionersPerCategory, practitioners };
