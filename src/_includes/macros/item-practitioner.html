@@ -1,22 +1,25 @@
-{% macro itemPractitioner(fullName, jobTitle, thumbnailUrl) %}
-  <article class="practitioner-card">
+{% macro itemPractitioner(firstName, lastName, jobTitle, profilePicture, practitionerUrl) %}
+  {% set thumbnail = '/uploads/img/team/310x400/' ~ profilePicture %}
+  {% set fullName %}
+    {% if jobTitle === "Médecin généraliste" %}Dr {% endif %}
+    {{lastName}} {{firstName}}
+  {% endset %}
+  <article class="practitioner__thumbnail">
     <div class="image-container">
-      <img src="../{{thumbnailUrl}}" alt="portrait of {{fullName}}" srcset="">
+      <img src="{{thumbnail}}" alt="portrait of {{fullName}}" srcset="">
     </div>
-    <h3 class="practitioner-title">{{ fullName }}</h3>
-    <p class="practitioner-job-title">{{ jobTitle }}</p>
-    <p class="practitioner-description">{{ jobTitle }}</p>
-    <a class="link" href="">
+    <h3 class="practitioner__thumbnail__title">{{ fullName }}</h3>
+    <p class="practitioner__thumbnail__job-title">{{ jobTitle }}</p>
+    <a class="link" href="{{practitionerUrl}}">
       <span>Plus d'information</span>
-      <svg class="icon link__icon" width="100%" height="100%" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.8281 0.39156L18.0469 7.28219C18.252 7.48726 18.375 7.73336 18.375 8.02047C18.375 8.26656 18.252 8.51265 18.0469 8.71773L10.8281 15.6084C10.459 15.9775 9.80273 15.9775 9.43359 15.5673C9.06445 15.1982 9.06445 14.542 9.47461 14.1728L14.9297 9.00484H0.984375C0.410156 9.00484 0 8.55367 0 8.02047C0 7.44625 0.410156 7.03609 0.984375 7.03609H14.9297L9.47461 1.82711C9.06445 1.45797 9.06445 0.801716 9.43359 0.432576C9.80273 0.0224193 10.418 0.0224193 10.8281 0.39156Z" fill="#E98D62"/>
-      </svg>
     </a>
-    <button class="button">
-      <span>Prendre rendez-vous</span>
-      <svg class="icon button__icon" width="100%" height="100%" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.65035 1.23438L8.51558 7.46875C8.67965 7.67383 8.80269 7.91993 8.80269 8.125C8.80269 8.3711 8.67965 8.61719 8.51558 8.82227L2.65035 15.0566C2.28121 15.4668 1.66597 15.4668 1.25582 15.0977C0.845661 14.7285 0.845661 14.1133 1.2148 13.7031L6.4648 8.125L1.2148 2.58789C0.845661 2.17774 0.845661 1.5625 1.25582 1.19336C1.66597 0.824223 2.28121 0.824223 2.65035 1.23438Z" fill="#2A6355"/>
-      </svg>
-    </button>
+    {% if activeSection == "team" %}
+      <button class="button">
+        <span>Prendre rendez-vous</span>
+        <svg class="icon button__icon" width="100%" height="100%" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.65035 1.23438L8.51558 7.46875C8.67965 7.67383 8.80269 7.91993 8.80269 8.125C8.80269 8.3711 8.67965 8.61719 8.51558 8.82227L2.65035 15.0566C2.28121 15.4668 1.66597 15.4668 1.25582 15.0977C0.845661 14.7285 0.845661 14.1133 1.2148 13.7031L6.4648 8.125L1.2148 2.58789C0.845661 2.17774 0.845661 1.5625 1.25582 1.19336C1.66597 0.824223 2.28121 0.824223 2.65035 1.23438Z" fill="#2A6355"/>
+        </svg>
+      </button>
+    {% endif %}
   </article>
 {% endmacro %}

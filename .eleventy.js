@@ -1,9 +1,10 @@
+
 import { DateTime } from "luxon";
 import {inspect} from "util";
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 
 //Collections
-import { news } from "./src/_11ty/collections/news.js";
+import { articles } from "./src/_11ty/collections/articles.js";
 import { practitionersPerCategory, practitioners } from "./src/_11ty/collections/practitioners.js";
 
 //Filters
@@ -21,7 +22,7 @@ import {
 export default function (eleventyConfig) {
 
   // collections
-  eleventyConfig.addCollection("news", news);
+  eleventyConfig.addCollection("articles", articles);
   eleventyConfig.addCollection("practitioners", practitioners);
   eleventyConfig.addCollection("practitionersPerCategory", practitionersPerCategory);
 

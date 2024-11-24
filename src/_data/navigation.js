@@ -1,22 +1,22 @@
 export default [
   {
-    label: "Home",
+    label: "Accueil",
     trigger: "home",
     url: "/"
   },
   {
-    label: "Praticien",
-    trigger: "practitioners",
-    url: "/practitioners/"
+    label: "Équipe",
+    trigger: "team",
+    url: "/team"
   },
-  {
-    label: "News",
-    trigger: "news",
-    url: "/news"
-  },
+  /* {
+    label: "Articles",
+    trigger: "articles",
+    url: "/articles"
+  }, */
   {
     label: "Contact",
-    trigger: "ontact",
+    trigger: "contact",
     url: "/#contact"
   }
 ]

@@ -1,0 +1,17 @@
+{% macro itemArticle(title, date, excerpt) %}
+  <article class="article__thumbnail">
+    <a class="article__thumbnail__link" href="">
+      <div class="article__thumbnail__title-container">
+        <h3 class="article__thumbnail__title">{{ title }}</h3>
+      </div>
+      <time class="article__thumbnail__date" datetime="{{ date | dateISO }}">{{date | dateFull}}</time>
+      <p class="article__thumbnail__excerpt">{{ excerpt | limit(75) }}</p>
+      <a class="link" href="">
+        <span>Vers l'article</span>
+        <svg class="icon link__icon" width="100%" height="100%" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.8281 0.39156L18.0469 7.28219C18.252 7.48726 18.375 7.73336 18.375 8.02047C18.375 8.26656 18.252 8.51265 18.0469 8.71773L10.8281 15.6084C10.459 15.9775 9.80273 15.9775 9.43359 15.5673C9.06445 15.1982 9.06445 14.542 9.47461 14.1728L14.9297 9.00484H0.984375C0.410156 9.00484 0 8.55367 0 8.02047C0 7.44625 0.410156 7.03609 0.984375 7.03609H14.9297L9.47461 1.82711C9.06445 1.45797 9.06445 0.801716 9.43359 0.432576C9.80273 0.0224193 10.418 0.0224193 10.8281 0.39156Z" fill="#E98D62"/>
+        </svg>
+      </a>
+    </a>
+  </article>
+{% endmacro %}
