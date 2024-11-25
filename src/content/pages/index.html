@@ -70,15 +70,16 @@ permalink: index.html
     {% if collections.articles | length %}
     <section class="articles-section">
       <div class="u-wrapper">
-        <h2 class="h2">Last news</h2>
+        <h2 class="h2">Articles</h2>
         <p class="text-container">Retrouvez ici les dernières actualités du centre Médichenois</p>
         {% for articleItem in collections.articles | limit(4) %}
-        {% if loop.first %}<ul class="news-list">{% endif %}
+        {% if loop.first %}<ul class="articles-list">{% endif %}
           <li class="articles-list__item">
             {{ itemArticle(
                 title=articleItem.data.title,
                 excerpt=articleItem.data.excerpt,
-                date=articleItem.data.date
+                date=articleItem.date,
+                articleUrl=articleItem.url
             ) }}
           </li>
         {% if loop.last %}</ul>{% endif %}

@@ -9,11 +9,11 @@ export default [
     trigger: "team",
     url: "/team"
   },
-  /* {
+  {
     label: "Articles",
     trigger: "articles",
     url: "/articles"
-  }, */
+  },
   {
     label: "Contact",
     trigger: "contact",

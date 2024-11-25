@@ -13,7 +13,7 @@
       <div class="u-wrapper-text">
         <h1 class="article__title">{{title}}</h1>
         <p class="article__intro">{{excerpt}}</p>
-        <time class="article__date" datetime="{{ date | dateISO }}">{{date | dateFull}}</time>
+        <time class="article__date" datetime="{{ page.date | dateISO }}">{{page.date | dateFull}}</time>
       </div>
       <div class="image-container">
         <img class="article__cover" src="{{img1280}}" alt="cover of the article" srcset="">

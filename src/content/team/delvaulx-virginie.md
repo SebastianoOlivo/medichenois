@@ -1,8 +1,8 @@
 ---
 firstName: "Virginie"
 lastName: "Delvaulx"
-jobTitle: "Kinésithérapeuthe"
-profilePicture: "default-w.jpg"
+jobTitle: "Kinésithérapeute"
+profilePicture: "virginie.jpg"
 agendaLink: 
 phoneNumber: "+32 476 85 43 35"
 email: "virginie.delvaulx@gmail.com"

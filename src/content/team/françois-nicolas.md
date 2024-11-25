@@ -1,7 +1,7 @@
 ---
-firstName: "François"
-lastName: "Nicolas"
-jobTitle: "Kinésithérapeuthe"
+firstName: "Nicolas"
+lastName: "François"
+jobTitle: "Kinésithérapeute"
 profilePicture: "francois.jpg"
 agendaLink: "https://www.q-top.be/online-planner-v2/FR/?root=kq47931"
 phoneNumber: "+32 471 79 21 64"
