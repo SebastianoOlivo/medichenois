@@ -3,7 +3,7 @@ firstName: "Sébastien"
 lastName: "Naert"
 jobTitle: "Médecin généraliste"
 profilePicture: "sebastien_nt.jpg"
-agendaLink:
+agendaLink: "https://progenda.be/calendars/docteur-naert-sebastien-medecine-generale-waterloo"
 phoneNumber: "+32 456 89 23 96"
 date: 2024-10-12T24:27:44.176Z
 category: "Médecins"
