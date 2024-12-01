@@ -3,7 +3,7 @@ firstName: "Sébastien"
 lastName: "Nadler"
 jobTitle: "Médecin généraliste"
 profilePicture: "sebastien_nd.jpg"
-agendaLink:
+agendaLink: "https://progenda.be/calendars/docteur-nadler-sebastien-medecine-generale-waterloo"
 phoneNumber: "+32 456 53 75 33 "
 date: 2024-10-12T25:27:44.176Z
 category: "Médecins"
