@@ -10,3 +10,6 @@ secrets.js
 
 # Local Netlify folder
 .netlify
+
+# public site
+dist/
