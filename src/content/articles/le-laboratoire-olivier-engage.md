@@ -1,7 +1,6 @@
 ---
 title: "Le laboratoire Olivier engage"
 pictureUrl: "prelevement.jpg"
-pictureAlt: "prelevement"
 excerpt: "Le laboratoire Olivier recherche encore des préleveurs ou des préleveuses pour assurer les permanences au centre Medichenois."
 tags:
   - partenaires
