@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ metaTitle }} - {{ site.title }}</title>
+  <meta name="description" content="{{ metaDescription }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Twitter + Open Graph -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="{{ site.authorTwitter }}" />
+  <meta property="og:url" content="{{ site.url ~ page.url }}" />
+  <meta property="og:title" content="{{ metaTitle }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
+  <meta property="og:image" content="{{ metaImage }}" />
+
+  <!-- Apple icon (minimal) -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.bundle.js"></script>
+</head>
+<body class="">
+    {% include "../partials/header.html" %}
+      {% block content %}{% endblock %}
+   {% include "../partials/footer.html" %}
+
+    {% if path == "home" %}
+      <!-- Netlify Identity Widget -->
+      <!-- Needed only if you are using Netlify Identity feature -->
+      
+      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {% endif %}
+
+  </body>
+</html>

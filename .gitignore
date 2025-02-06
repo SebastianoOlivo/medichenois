@@ -1,0 +1,15 @@
+_dist/
+_tmp/
+.DS_Store
+node_modules/
+.vscode/
+*git/
+package-lock.json
+.env
+secrets.js
+
+# Local Netlify folder
+.netlify
+
+# public site
+dist/

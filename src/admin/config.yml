@@ -1,0 +1,70 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
+
+media_folder:  "/src/admin/uploads/img"
+public_folder: "/uploads/img"
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+# publish_mode: editorial_workflow
+collections:
+  - label: "team"
+    name:  "Team"
+    folder: "src/content/team"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Prénom", name: "firstName", widget: "string" }
+      - { label: "Nom", name: "lastName", widget: "string" }
+      - { label: "Fonction", name: "jobTitle", widget: "string" }
+      - { label: "Image de profile", 
+          name: "profilePicture", 
+          widget: "image", media_folder: "/src/admin/uploads/img/team", 
+          public_folder: "",
+        }
+      - { label: "Lien vers l'agenda", name: "agendaLink", widget: "string" }
+      - { label: "Numéro de téléphone", name: "phoneNumber", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime", default: "{{now}}" }
+      - { widget: select,
+          label: "Categorie de practicien",
+          name: "category",
+          create: true,
+          options: ["Médecins", "Paramedicaux", "Laboratoire d’analyses"]
+        }
+      - label: "Horaire"
+        name: "schedule"
+        widget: "list"
+        fields:
+        - { label: "Lundi", name: "Lundi", widget: "string" }
+        - { label: "Mardi", name: "Mardi", widget: "string" }
+        - { label: "Mercredi", name: "Mercredi", widget: "string" }
+        - { label: "Jeudi", name: "Jeudi", widget: "string" }
+        - { label: "Vendredi", name: "Vendredi", widget: "string" }
+        - { label: "Samedi", name: "Samedi", widget: "string" }
+        - { label: "Dimanche", name: "Dimanche", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+    
+  - label: "News"
+    name: "news"
+    folder: "src/content/articles"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "pictureUrl", widget: "image", media_folder: "/src/admin/uploads/img/articles", public_folder: ""}
+      - { label: "En-tête ", name: "excerpt", widget: "text" }
+      - { label: "Date de publication", name: "date", widget: "datetime", default: "{{now}}" }
+      - { widget: select,
+          label: "tags",
+          name: "tags",
+          multiple: true,
+          create: true,
+          options: ["centre medichenois", "information", "sante", "évènements", "partenaires"]
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+

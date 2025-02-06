@@ -1,0 +1,114 @@
+.categories, .practitioners {
+  padding: 0;
+  list-style: none;
+}
+
+.category {
+  &__name {
+    font-family: var(--fontstack-alt);
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.practitioner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem(8);
+  margin-top: rem(24);
+  @include mq(medium) {
+    flex-direction: row;
+  }
+  &__profile, &__content {
+    @include mq(medium) {
+      width: 50%;
+    }
+  }
+
+  &__profile {
+    @include mq(large) {
+      width: 33.33%;
+    }
+    &__picture {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-bottom: 100%;
+      background-color: var(--color-gray2);
+      &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      list-style: none;
+      padding: 0;
+      margin-top: rem(24);
+      &__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(16);
+        &--primary {
+          font-weight: 600;
+          font-family: var(--fontstack-alt);
+          font-size: rem(16);
+        }
+        &--secondary {
+          color: var(--color-secondary-dark);
+          font-size: rem(14);
+        }
+        .button {
+          align-self: flex-start;
+          margin-top: rem(8);
+        }
+      }
+    }
+    
+  }
+
+  &__content {
+    @include mq(large) {
+      width: 66.66%;
+    }
+    .button {
+      align-self: flex-start;
+      margin-top: rem(8);
+    }
+    &__name {
+      font-family: var(--fontstack-alt);
+      font-size: rem(64);
+      font-weight: 400;
+      margin-bottom: 0;
+      line-height: 1em;
+    }
+    &__job-title {
+      color: var(--color-secondary-dark);
+    }
+    &__body {
+      font-size: rem(16);
+    }
+  }
+}
+
+.schedule {
+  list-style: none;
+  padding: rem(0);
+  font-size: rem(14);
+  max-width: rem(180);
+  margin-bottom: 0;
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    &__day {
+      color: var(--color-gray4);
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+}

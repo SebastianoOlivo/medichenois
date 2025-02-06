@@ -1,0 +1,41 @@
+// Settings and variables
+@import "design-tokens/design-tokens.colors.scss";
+@import "design-tokens/design-tokens.media-queries.scss";
+@import "design-tokens/design-tokens.fonts.scss";
+
+// normalize
+@import "vendors/normalize.scss";
+
+// Functions
+@import "functions/functions.base.scss";
+
+// Mixins
+@import "mixins/mixins.media-queries.scss";
+
+// Base (unclassed elements)
+@import "base/base.body.scss";
+@import "base/base.html.scss";
+@import "base/base.font.scss";
+@import "base/base.margin.scss";
+
+// Layout
+@import "layouts/layouts.contact.scss";
+@import "layouts/_layouts.containers.scss";
+@import "layouts/_layouts.home.scss";
+@import "layouts/_layouts.practitioner.scss";
+@import "layouts/_layouts.articles.scss";
+
+// Components
+@import "components/components.titles.scss";
+@import "components/components.header.scss";
+@import "components/components.footer.scss";
+@import "components/components.navigation.scss";
+@import "components/components.map.scss";
+@import "components/components.button.scss";
+@import "components/components.icon.scss";
+@import "components/components.panel.scss";
+@import "components/components.agenda.scss";
+
+// Utilities
+@import "utilities/utilities.spacing.scss";
+@import "utilities/utilities.text.scss";

@@ -1,0 +1,99 @@
+{% extends "layouts/default.html" %}
+{% set activeSection = "practitioner" %}
+
+{% set metaTitle = lastName + "  " + firstName %}
+{% set metaDescription = excerpt %}
+{% set metaImage = '/uploads/img/team/310x400/' ~ profilePicture %}
+
+{% block content %}
+  <main>
+    <div class="u-wrapper">
+      <article class="practitioner">
+        <div class="practitioner__profile">
+          <div class="image-container">
+            {% set img310 = '/uploads/img/team/310x400/' ~ profilePicture %}
+            {% set img930 = '/uploads/img/team/930x1200/' ~ profilePicture %}
+            {% set img1500 = '/uploads/img/team/' ~ profilePicture %}
+            <picture class="practitioner__profile__picture">
+              <source srcset="{{ img930 }} 1024w,
+                              {{ img930 }} 1500w"
+                      width="img930"
+                      height="844"
+                      sizes="100vw"
+                      media="(min-width: 500px)">
+              <img class="practitioner__profile__picture__image" src="{{ img310 }}"
+                   width="600"
+                   height="600"
+                   class="o-fluidimage"
+                   alt="{{ imageAlt }}"
+                   decoding="async">
+            </picture>
+          </div>
+          <ul class="practitioner__profile__info">
+            {% if phoneNumber %}
+            <li class="practitioner__profile__info__item">
+              <span class="practitioner__profile__info__item--primary">
+                Telephone
+              </span>
+              <span class="practitioner__profile__info__item--secondary">
+                {{phoneNumber}}
+              </span>
+            </li>
+            {% endif %}
+            {% if email %}
+            <li class="practitioner__profile__info__item">
+              <span class="practitioner__profile__info__item--primary">
+                Email
+              </span>
+              <span class="practitioner__profile__info__item--secondary">
+                {{email}}
+              </span>
+            </li>
+            {% endif %}
+            {% if schedule %}
+            <li class="practitioner__profile__info__item">
+              <span class="practitioner__profile__info__item--primary">
+                Horaire
+              </span>
+              <ul class="schedule">
+                {% for day, hour in schedule %}
+                <li class="schedule__item">
+                  <span class="schedule__item__day">{{day}}:</span>
+                  <span class="schedule__item__time">{{hour}}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% endif %}
+            {% if agendaLink %}
+            <li class="practitioner__profile__info__item">
+              <span class="practitioner__profile__info__item--primary">
+                Prendre rendez-vous
+              </span>
+              <a href="{{agendaLink}}" target="_blank" class="button">
+                <span>Prendre rendez-vous</span>
+                <svg class="icon button__icon" width="100%" height="100%" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.65035 1.23438L8.51558 7.46875C8.67965 7.67383 8.80269 7.91993 8.80269 8.125C8.80269 8.3711 8.67965 8.61719 8.51558 8.82227L2.65035 15.0566C2.28121 15.4668 1.66597 15.4668 1.25582 15.0977C0.845661 14.7285 0.845661 14.1133 1.2148 13.7031L6.4648 8.125L1.2148 2.58789C0.845661 2.17774 0.845661 1.5625 1.25582 1.19336C1.66597 0.824223 2.28121 0.824223 2.65035 1.23438Z" fill="#2A6355"/>
+                </svg>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="practitioner__content">
+          <div class="u-wrapper-text">
+            <header>
+              <h1 class="practitioner__content__name">{{ lastName }} {{firstName}}</h1>
+              <div class="practitioner__content__job-title">
+                <p>{{ jobTitle }}</p>
+              </div>
+            </header>
+            <div class="practitioner__content__body">
+              {{ content | safe }}
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+{% endblock %}

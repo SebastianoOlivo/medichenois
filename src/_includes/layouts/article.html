@@ -1,0 +1,29 @@
+{% extends "layouts/default.html" %}
+{% set activeSection = "articles" %}
+
+{% set metaTitle = title %}
+{% set metaDescription = excerpt %}
+{% set metaImage = '/uploads/img/articles/980x980/' ~ pictureUrl %}
+
+{% block content %}
+{% set img1280 = '/uploads/img/articles/1280x422/' ~ pictureUrl %}
+<main>
+  <article class="article">
+    <header>
+      <div class="u-wrapper-text">
+        <h1 class="article__title">{{title}}</h1>
+        <p class="article__intro">{{excerpt}}</p>
+        <time class="article__date" datetime="{{ page.date | dateISO }}">{{page.date | dateFull}}</time>
+      </div>
+      <div class="image-container">
+        <img class="article__cover" src="{{img1280}}" alt="cover of the article" srcset="">
+      </div>
+    </header>
+    <div class="article__body">
+      <div class="u-wrapper-text">
+        {{ content | safe }}
+      </div>
+    </div>
+  </article>
+</main>
+{% endblock %}

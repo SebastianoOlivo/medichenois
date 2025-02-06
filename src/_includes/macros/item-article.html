@@ -1,0 +1,14 @@
+{% macro itemArticle(title, date, excerpt, articleUrl) %}
+  <article class="article__thumbnail">
+    <a class="article__thumbnail__link" href="{{articleUrl}}">
+      <div class="article__thumbnail__title-container">
+        <h3 class="article__thumbnail__title">{{ title | limitText(35)}}</h3>
+      </div>
+      <time class="article__thumbnail__date" datetime="{{ date | dateISO }}">{{date | dateFull}}</time>
+      <p class="article__thumbnail__excerpt">{{ excerpt | limitText(75) }}</p>
+      <a class="link" href="{{articleUrl}}">
+        <span>Vers l'article</span>
+      </a>
+    </a>
+  </article>
+{% endmacro %}

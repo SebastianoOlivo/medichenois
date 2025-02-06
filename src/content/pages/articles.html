@@ -1,0 +1,38 @@
+---
+permalink: /articles/index.html
+---
+
+{% extends "layouts/default.html" %}
+
+{% set activeSection = "articles" %}
+{% set metaTitle = "Articles" %}
+{% set metaDescription = "Retrouvez ici les dernières actualités du centre Médichenois" %}
+{% set thumbnail = '/uploads/img/practitioners/310x400/' ~ profilePicture %}
+{% block content %}
+  <main>
+    <div class="u-wrapper">
+      {% for article in collections.articles %}
+        {% if loop.first %}<ul class="article-thumbnails">{% endif %}
+          <li class="article-thumbnail">
+            <a class="u-link-invisible" href="{{article.url}}" >
+              <div class="image-container">
+                <img class="article-thumbnail__cover" src="/uploads/img/articles/980x980/{{article.data.pictureUrl}}" alt="cover of the article" srcset="">
+              </div>
+              <div class="article-thumbnail__content"> 
+                <ul class="article-thumbnail__tags">
+                  {% for tag in article.data.tags %}
+                    <li class="article-thumbnail__tag">{{tag}}</li>
+                  {% endfor %}
+                </ul>
+                <h2 class="article-thumbnail__title">{{article.data.title}}</h2>
+                <p class="article-thumbnail__body">{{article.data.excerpt | limitText(75) }}</p>
+                <a href="{{article.url}}" class="link article_detail">Lire</a>
+                <time class="article-thumbnail__date" datetime="{{ article.date | dateISO }}">{{article.date | dateFull}}</time>
+              </div>
+            </a>
+          </li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}
