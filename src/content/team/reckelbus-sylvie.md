@@ -9,7 +9,7 @@ date: 2024-10-12T26:27:44.176Z
 category: "Médecins"
 schedule:
   Lundi: "9h - 19h"
-  Mardi: "13h - 19h"
+  Mardi: "9h - 13h"
   Mercredi: "8h30 - 18h"
   Jeudi: "8h30 - 16h"
   Vendredi: "9h - 17h"
