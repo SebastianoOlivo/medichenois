@@ -1,12 +1,13 @@
 ---
-firstName: "Nicolas"
-lastName: "François"
-jobTitle: "Kinésithérapeute"
-profilePicture: "francois.jpg"
-agendaLink: "https://www.q-top.be/online-planner-v2/FR/?root=kq47931"
-phoneNumber: "+32 471 79 21 64"
+firstName: Nicolas
+lastName: François
+jobTitle: Kinésithérapeute
+profilePicture: capture-d’écran-2025-08-29-à-11.14.19.png
+agendaLink: https://www.q-top.be/online-planner-v2/FR/?root=kq47931
+phoneNumber: +32 471 79 21 64
+email: " "
 date: 2024-10-12T23:27:44.176Z
-category: "Paramedicaux"
+category: Paramedicaux
 ---
 -	Bachelier en kinésithérapie et réadaptation UCL, 2020 
 -	Master en kinésithérapie et réadaptation, 2021 
