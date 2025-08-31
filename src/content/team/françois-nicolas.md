@@ -2,7 +2,7 @@
 firstName: Nicolas
 lastName: François
 jobTitle: Kinésithérapeute
-profilePicture: capture-d’écran-2025-08-29-à-11.14.19.png
+profilePicture: francois.jpg
 agendaLink: https://www.q-top.be/online-planner-v2/FR/?root=kq47931
 phoneNumber: +32 471 79 21 64
 email: " "

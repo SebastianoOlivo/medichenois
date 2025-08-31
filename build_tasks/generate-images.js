@@ -23,7 +23,7 @@ const transforms = [
     // 310x395 thumbnails for practitioners
     src: "./src/admin/uploads/img/team/",
     dist: "./dist/uploads/img/team/310x400/",
-    formats: ["jpg"],
+    formats: ["jpg", "png"],
     options: {
       width: 310,
       height: 400,
