@@ -1,11 +1,13 @@
 ---
-firstName: "Ambre"
-lastName: "Cherton"
-jobTitle: "Kinésithérapeute uro-gynécologique"
-profilePicture: "ambre.jpg"
-phoneNumber: "+32 497 40 97 87"
-date: 2024-10-12T27:27:44.176Z
-category: "Paramedicaux"
+firstName: Ambre
+lastName: Cherton
+jobTitle: Kinésithérapeute uro-gynécologique
+profilePicture: ambre.jpg
+agendaLink: https://www.doctoranytime.be/d/kinesitherapeute/ambre-cherton
+phoneNumber: +32 497 40 97 87
+email: " "
+date: null
+category: Paramedicaux
 ---
 
 Bienvenue ! 
