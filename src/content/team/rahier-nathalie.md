@@ -1,18 +1,22 @@
 ---
-firstName: "Nathalie"
-lastName: "Rahier"
-jobTitle: "Médecin généraliste"
-profilePicture: "nathalie.jpg"
-agendaLink: "https://progenda.be/calendars/docteur-rahier-nathalie-medecine-generale-waterloo"
-phoneNumber: "+32 491 644 475"
+firstName: Nathalie
+lastName: Rahier
+jobTitle: Médecin généraliste
+profilePicture: nathalie.jpg
+agendaLink: https://progenda.be/calendars/docteur-rahier-nathalie-medecine-generale-waterloo
+phoneNumber: +32 491 644 475
+email: " "
 date: 2024-10-12T21:27:44.176Z
-category: "Médecins"
-schedule: 
-  lundi: "8h40 -18h"
-  mardi: "8h40 -18h"
-  mercredi: "8h40 -18h"
-  vendredi: "8h40 -18h"
+category: Médecins
+schedule:
+  lundi: 8h40 -18h
+  mardi: 8h40 -18h
+  mercredi: 8h40 -18h
+  vendredi: 8h40 -18h
 ---
+**Je suis en congé maternité jusqu'au 5 Octobre 2026. Je suis remplacée par le Dr Oufkir Imane. Vous pouvez la joindre au 0492 65 58 63. Elle travaille au centre medichenois, dans mon cabinet.** 
+
+
 
 Médecin généraliste depuis 2020, je prends en charge les affections aiguës et chroniques chez les enfants et les adultes. J’aime avoir une prise en charge globale pour maximiser votre bien-être.
 
