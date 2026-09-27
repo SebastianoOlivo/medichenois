@@ -14,8 +14,6 @@ schedule:
   mercredi: 8h40 -18h
   vendredi: 8h40 -18h
 ---
-**Je suis en congé maternité jusqu'au 27 Septembre 2026. Je suis remplacée par le Dr Oufkir Imane. Vous pouvez la joindre au 0492 65 58 63. Elle travaille au centre medichenois, dans mon cabinet.** 
-
 Médecin généraliste depuis 2020, je prends en charge les affections aiguës et chroniques chez les enfants et les adultes. J’aime avoir une prise en charge globale pour maximiser votre bien-être.
 
 Je suis également agrée en médecine préventive du nourrisson et du jeune enfant à l’ONE et possède un certificat en électrocardiographie.
