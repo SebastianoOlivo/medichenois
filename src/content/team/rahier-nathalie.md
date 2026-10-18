@@ -9,10 +9,10 @@ email: " "
 date: 2024-10-12T21:27:44.176Z
 category: Médecins
 schedule:
-  lundi: 8h40 -18h
-  mardi: 8h40 -18h
-  mercredi: 8h40 -18h
-  vendredi: 8h40 -18h
+  lundi: 8h40 - 18h
+  mardi: 8h40 - 18h
+  Jeudi: 8h40 - 18h
+  vendredi: 8h40 - 18h
 ---
 Médecin généraliste depuis 2020, je prends en charge les affections aiguës et chroniques chez les enfants et les adultes. J’aime avoir une prise en charge globale pour maximiser votre bien-être.
 
